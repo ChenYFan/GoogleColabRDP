@@ -23,8 +23,13 @@ sudo adduser CYF chrome-remote-desktop
 printf "\n安装完成 " >&2 ||
 printf "\n安装失败 " >&2
 printf '\n请进入https://remotedesktop.google.com/headless 获取liunx密钥并复制在这个地方\n'
-read -p "Paste Here: " CRP
+read -p "粘贴在这里: " CRP
 su - CYF -c """$CRP"""
+printf '开始安装中文字体'
+wget https://codeload.github.com/ChenYFan/GoogleColabRDP/zip/main
+unzip GoogleColabRDP-main.zip
+sudo mv GoogleColabRDP-main/win_cn_fonts/ /usr/share/fonts/win_font/
+sudo fc-cache -fv
 printf '完毕！请进入https://remotedesktop.google.com/access/ \n\n'
 if sudo apt-get upgrade &> /dev/null
 then
