@@ -26,8 +26,8 @@ printf '\n请进入https://remotedesktop.google.com/headless 获取liunx密钥�
 read -p "粘贴在这里: " CRP
 su - CYF -c """$CRP"""
 printf '开始安装中文字体'
-wget https://codeload.github.com/ChenYFan/GoogleColabRDP/zip/main
-unzip GoogleColabRDP-main.zip
+wget -O font.zip https://codeload.github.com/ChenYFan/GoogleColabRDP/zip/main
+unzip font.zip
 sudo mv GoogleColabRDP-main/win_cn_fonts/ /usr/share/fonts/win_font/
 sudo fc-cache -fv
 printf '完毕！请进入https://remotedesktop.google.com/access/ \n\n'
