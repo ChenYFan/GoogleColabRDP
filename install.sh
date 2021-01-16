@@ -30,6 +30,7 @@ wget https://codeload.github.com/ChenYFan/GoogleColabRDP/zip/main -O font.zip
 unzip font.zip
 sudo mv GoogleColabRDP-main/win_cn_fonts/ /usr/share/fonts/win_font/
 sudo fc-cache -fv
+sudo echo 'LANG="zh_CN.UTF-8"' > /etc/default/locale
 printf '完毕！请进入https://remotedesktop.google.com/access/ \n\n'
 if sudo apt-get upgrade &> /dev/null
 then
